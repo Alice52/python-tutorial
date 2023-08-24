@@ -44,7 +44,7 @@ def rename_cell_folder(folder_name):
     """
     all_file_name = os.listdir(folder_name)
     if len(all_file_name) > 1 and is_target_folder(all_file_name):
-        file_name = get_file_name(folder_name)
+        file_name = get_file_name(folder_name).replace("|", "").replace(":", "")
         # TODO: need a reg to match file_name start with number + "."
         prefix = os.path.basename(folder_name).zfill(3) + "."
         for i in range(len(all_file_name)):
